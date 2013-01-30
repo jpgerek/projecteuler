@@ -191,3 +191,6 @@ def pentagonal(n):
 def is_pentagonal(number):
 	n = float(math.sqrt(24 * number + 1) + 1) / 6.0
 	return n == int(n)
+
+def gcd(number1, number2):
+	return max(set(factors(number1)) & set(factors(number2)))
