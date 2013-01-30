@@ -184,3 +184,10 @@ def cf_fraction(cf_digits):
 		numerator = (digit * denominator) + numerator
 		numerator, denominator = denominator, numerator 
 	return denominator, numerator
+
+def pentagonal(n):
+	return n * ((3 * n) - 1) / 2
+	
+def is_pentagonal(number):
+	n = float(math.sqrt(24 * number + 1) + 1) / 6.0
+	return n == int(n)
