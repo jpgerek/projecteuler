@@ -1,6 +1,6 @@
 import itertools
 import math
-from euler import get_factors
+from euler import factors
 
 
 def gen_triangle_nums():
@@ -12,7 +12,7 @@ def gen_triangle_nums():
 		count += 1
 
 for num in gen_triangle_nums():
-	factors = get_factors(num)
-	if len(factors) > 500:
+	factors_digits = factors(num)
+	if len(factors_digits) > 500:
 		print num
 		break
