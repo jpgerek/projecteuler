@@ -194,3 +194,19 @@ def is_pentagonal(number):
 
 def gcd(number1, number2):
 	return max(set(factors(number1)) & set(factors(number2)))
+
+#- From stackoverflow http://stackoverflow.com/a/7825718/311928 -#
+def partitions(elements, goal):
+	if goal == 0 or not elements:
+		return []
+	this_goal = elements[0]
+	remaining_elements = elements[1:]
+	results = []
+	for num in xrange(1 + (goal / this_goal)):
+		remaining_goal = goal - (num * this_goal)
+		if remaining_goal == 0:
+			results.append([num] + [0] * len(remaining_elements))
+		else:
+			for option in partitions(remaining_elements, remaining_goal):
+				results.append([num] + option)
+	return results
